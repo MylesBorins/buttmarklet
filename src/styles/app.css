@@ -1,0 +1,19 @@
+html {
+  background: #fff;
+}
+
+body {
+  font-family: 'Inconsolata';
+}
+
+.backfaceVisibility {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  z-index: 0;
+}
+
+#wideload {
+  z-index: 10;
+  height: 200px;
+  width: 200px;
+}
