@@ -15,16 +15,15 @@ var fs = require('fs');
 // create the main context
 var mainContext = Engine.createContext();
 
+var bookmarklet = fs.readFileSync(__dirname + '/content/buttmarklet.js', 'utf8');
+
 var title = new Surface({
-  content: '<h1>Buttmarklet</h1>',
+  content: ['<h1><a href="', bookmarklet, '">', 'ButtMarklet', '</a><h1'].join(' '),
   properties: {
     textAlign: 'center'
   }
 });
 
-var bookmarklet = fs.readFileSync(__dirname + '/content/buttmarklet.js', 'utf8');
-
-var link = ['<a href="', bookmarklet, '">', '<div id="wideload"></div></a>'].join(' ');
 
 var link = new Surface({
   size: [200, 200],
@@ -49,10 +48,9 @@ var centerSpinModifier = new Modifier({
 });
 
 var centerModifier = new Modifier({
-  align: [0.5, 0.5],
-  origin: [0.5, 0.5]
+  align: [0, 0.2]
 });
 
-mainContext.add(title);
+mainContext.add(centerModifier).add(title);
 mainContext.add(centerSpinModifier).add(logo);
-mainContext.add(centerModifier).add(link);
+// mainContext.add(centerModifier).add(link);
