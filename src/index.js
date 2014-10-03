@@ -9,7 +9,7 @@ var Engine = require('famous/core/Engine');
 var Modifier = require('famous/core/Modifier');
 var Transform = require('famous/core/Transform');
 var ImageSurface = require('famous/surfaces/ImageSurface');
-var Surface = require('famous/core/surface');
+var Surface = require('famous/core/Surface');
 var fs = require('fs');
 
 // create the main context
