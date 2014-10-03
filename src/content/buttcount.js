@@ -14,14 +14,15 @@ var observer = new MutationObserver(function (mutations) {
     if (word.match(/butt/i) || word.match(/butts/i) || word.match(/butte/i)) {
       console.log(word);
       count++;
-      Tinycon.setBubble(count);
+      if (Tinycon) {
+        Tinycon.setImage('https://chat.meatspac.es/images/icon-16.png');
+        Tinycon.setBubble(count);
+      }
     }
   });
 });
 
 // configuration of the observer:
 var config = { attributes: true, childList: true, characterData: true };
-
-Tinycon.setImage('https://chat.meatspac.es/images/icon-16.png');
 // pass in the target node, as well as the observer options
 observer.observe(target, config);
