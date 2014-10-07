@@ -18,7 +18,7 @@ var mainContext = Engine.createContext();
 var bookmarklet = fs.readFileSync(__dirname + '/content/buttmarklet.js', 'utf8');
 
 var title = new Surface({
-  content: ['<h1><a href="', bookmarklet, '">', 'ButtMarklet', '</a><h1'].join(' '),
+  content: ['<h1><a href="', 'javascript:' ,bookmarklet, '">', 'ButtMarklet', '</a><h1'].join(' '),
   properties: {
     textAlign: 'center'
   }
@@ -53,4 +53,3 @@ var centerModifier = new Modifier({
 
 mainContext.add(centerModifier).add(title);
 mainContext.add(centerSpinModifier).add(logo);
-// mainContext.add(centerModifier).add(link);
